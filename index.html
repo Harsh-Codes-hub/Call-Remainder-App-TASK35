@@ -22,10 +22,115 @@
       href="./favicon/favicon-16x16.png"
     />
     <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
+    <main>
+      <div class="form-container">
+        <h2>New Call</h2>
+        <form>
+          <label for="image-url">Image URL</label>
+          <input
+            required
+            type="text"
+            name="image-url"
+            id="image-url"
+            placeholder="https://example.com/pfp.jpg"
+          />
+
+          <label for="name">Full Name</label>
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter full name"
+          />
+
+          <label for="home-town">Home Town</label>
+          <input
+            required
+            type="text"
+            name="home-town"
+            id="home-town"
+            placeholder="Enter home town"
+          />
+
+          <label for="purpose">Purpose</label>
+          <input
+            required
+            type="text"
+            name="purpose"
+            id="purpose"
+            placeholder="e.g. quick appointment note"
+          />
+
+          <label>Category</label>
+          <div class="category-container">
+            <label class="tag-checkbox" for="emergency">
+              <input
+                type="radio"
+                name="Category"
+                id="emergency"
+                value="emergency"
+              />
+              <span>emergency</span>
+            </label>
+            <label class="tag-checkbox" for="important">
+              <input
+                type="radio"
+                name="Category"
+                id="important"
+                value="important"
+              />
+              <span>important</span>
+            </label>
+            <label class="tag-checkbox" for="urgent">
+              <input type="radio" name="Category" id="urgent" value="urgent" />
+              <span>urgent</span>
+            </label>
+            <label class="tag-checkbox" for="no-rush">
+              <input
+                type="radio"
+                name="Category"
+                id="no-rush"
+                value="no-rush"
+              />
+              <span>no rush</span>
+            </label>
+          </div>
+
+          <button type="button" class="submit-btn">Create Remainder</button>
+          <button type="button" class="close-form">Close</button>
+        </form>
+      </div>
+      <div class="note-container">
+        <div class="left-icons">
+          <button type="button" id="add-note">
+            <i class="ri-add-line"></i>
+          </button>
+          <button type="button" id="up-btn">
+            <i class="ri-arrow-up-line"></i>
+          </button>
+          <button type="button" id="down-btn">
+            <i class="ri-arrow-down-line"></i>
+          </button>
+        </div>
+
+        <div class="stack"></div>
+
+        <div class="right-icons">
+          <button type="button" class="dot red"></button>
+          <button type="button" class="dot yellow"></button>
+          <button type="button" class="dot green"></button>
+          <button type="button" class="dot blue"></button>
+        </div>
+      </div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
