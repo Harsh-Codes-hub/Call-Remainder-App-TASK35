@@ -67,7 +67,6 @@ main {
   justify-content: center;
   gap: 24px;
   position: relative;
-  display: none;
 }
 
 .left-icons {
@@ -200,7 +199,7 @@ button.msg {
 }
 
 .form-container {
-  //   display: none;
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -245,7 +244,7 @@ input[type="text"] {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  label {
+  .tag-checkbox {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -254,6 +253,49 @@ input[type="text"] {
     border: 1px solid var(--border);
     padding: 5px 10px;
     border-radius: 15px;
+    transition: border 0.3s ease;
+    span + input {
+      transition: all 0.3s ease;
+    }
+  }
+}
+
+.tag-checkbox {
+  &:nth-child(1):has(#emergency:checked) {
+    border-color: var(--red);
+  }
+  #emergency {
+    accent-color: var(--red);
+    &:checked + span {
+      color: var(--red);
+    }
+  }
+  &:nth-child(2):has(#important:checked) {
+    border-color: var(--yellow);
+  }
+  #important {
+    accent-color: var(--yellow);
+    &:checked + span {
+      color: var(--yellow);
+    }
+  }
+  &:nth-child(3):has(#urgent:checked) {
+    border-color: var(--green);
+  }
+  #urgent {
+    accent-color: var(--green);
+    &:checked + span {
+      color: var(--green);
+    }
+  }
+  &:nth-child(4):has(#no-rush:checked) {
+    border-color: var(--blue);
+  }
+  #no-rush {
+    accent-color: var(--blue);
+    &:checked + span {
+      color: var(--blue);
+    }
   }
 }
 

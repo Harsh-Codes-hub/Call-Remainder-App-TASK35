@@ -59,7 +59,6 @@ main {
   justify-content: center;
   gap: 24px;
   position: relative;
-  display: none;
 }
 
 .left-icons {
@@ -189,6 +188,7 @@ button.msg {
 }
 
 .form-container {
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -234,7 +234,7 @@ input[type=text] {
   flex-wrap: wrap;
   gap: 10px;
 }
-.category-container label {
+.category-container .tag-checkbox {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -243,6 +243,47 @@ input[type=text] {
   border: 1px solid var(--border);
   padding: 5px 10px;
   border-radius: 15px;
+  transition: border 0.3s ease;
+}
+.category-container .tag-checkbox span + input {
+  transition: all 0.3s ease;
+}
+
+.tag-checkbox:nth-child(1):has(#emergency:checked) {
+  border-color: var(--red);
+}
+.tag-checkbox #emergency {
+  accent-color: var(--red);
+}
+.tag-checkbox #emergency:checked + span {
+  color: var(--red);
+}
+.tag-checkbox:nth-child(2):has(#important:checked) {
+  border-color: var(--yellow);
+}
+.tag-checkbox #important {
+  accent-color: var(--yellow);
+}
+.tag-checkbox #important:checked + span {
+  color: var(--yellow);
+}
+.tag-checkbox:nth-child(3):has(#urgent:checked) {
+  border-color: var(--green);
+}
+.tag-checkbox #urgent {
+  accent-color: var(--green);
+}
+.tag-checkbox #urgent:checked + span {
+  color: var(--green);
+}
+.tag-checkbox:nth-child(4):has(#no-rush:checked) {
+  border-color: var(--blue);
+}
+.tag-checkbox #no-rush {
+  accent-color: var(--blue);
+}
+.tag-checkbox #no-rush:checked + span {
+  color: var(--blue);
 }
 
 .submit-btn {
