@@ -73,6 +73,7 @@
           <div class="category-container">
             <label class="tag-checkbox" for="emergency">
               <input
+                required
                 type="radio"
                 name="Category"
                 id="emergency"
@@ -82,6 +83,7 @@
             </label>
             <label class="tag-checkbox" for="important">
               <input
+                required
                 type="radio"
                 name="Category"
                 id="important"
@@ -90,11 +92,18 @@
               <span red>important</span>
             </label>
             <label class="tag-checkbox" for="urgent">
-              <input type="radio" name="Category" id="urgent" value="urgent" />
+              <input
+                required
+                type="radio"
+                name="Category"
+                id="urgent"
+                value="urgent"
+              />
               <span>urgent</span>
             </label>
             <label class="tag-checkbox" for="no-rush">
               <input
+                required
                 type="radio"
                 name="Category"
                 id="no-rush"
@@ -104,7 +113,7 @@
             </label>
           </div>
 
-          <button type="button" class="submit-btn">Create Remainder</button>
+          <button type="submit" class="submit-btn">Create Remainder</button>
           <button type="button" class="close-form">Close</button>
         </form>
       </div>
