@@ -1,3 +1,5 @@
+let allRemainders = JSON.parse(localStorage.getItem("remainders")) || [];
+
 // Variable Selections
 const addNote = document.querySelector("#add-note");
 const upBtn = document.querySelector("#up-btn");
@@ -28,12 +30,9 @@ function saveData(obj) {
   localStorage.setItem("remainders", JSON.stringify(remainders));
 }
 
-function showCards() {
+function showCards(data = allRemainders) {
   stack.innerHTML = "";
-
-  let allRemainders = JSON.parse(localStorage.getItem("remainders"));
-
-  allRemainders.forEach(function (remainder) {
+  data.forEach(function (remainder) {
     const card = document.createElement("div");
     card.classList.add("card");
 
@@ -87,10 +86,11 @@ function showCards() {
 
     card.appendChild(buttonsDiv);
 
-    document.querySelector(".stack").appendChild(card);
+    stack.appendChild(card);
   });
 }
 showCards();
+updateStack();
 
 function addRemainder() {
   formContainer.style.display = "initial";
@@ -134,6 +134,7 @@ function submitForm(evt) {
   const homeTownValue = homeTownInput.value.trim();
   const purposeValue = purposeInput.value.trim();
   let categorySelected = false;
+  
   categoryRadios.forEach((option) => {
     if (option.checked) {
       categorySelected = option.value;
@@ -173,8 +174,12 @@ function submitForm(evt) {
     category: categorySelected,
   });
 
+  allRemainders = JSON.parse(localStorage.getItem("remainders")) || [];
+  showCards()
+
   form.reset();
   formContainer.style.display = "none";
+  updateStack();
 }
 
 // Listeners
